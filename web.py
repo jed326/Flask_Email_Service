@@ -21,16 +21,16 @@ mail = Mail(app)
 
 @app.route('/')
 def index():
-    return "/send to send an email"
+    return 500
 
 #TODO: Look up gmail message specs
-@app.route('/send')
-def email():
-    msg = Message("Hello",
-                  sender=("Jay Deng", "me@example.com"),
-                  recipients=["jayd0104@gmail.com"])
-    mail.send(msg)
-    return
+# @app.route('/send')
+# def email():
+#     msg = Message("Hello",
+#                   sender=("Jay Deng", "me@example.com"),
+#                   recipients=["jayd0104@gmail.com"])
+#     mail.send(msg)
+#     return
 
 """
 {
@@ -42,7 +42,7 @@ def email():
 """
 
 
-@app.route('/post', methods=['POST'])
+@app.route('/send', methods=['POST'])
 def json_example():
     data = request.get_json()
     name = data['name']
